@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy 2026 Itinerary (Bilingual)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+HK:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans HK', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .day-tab-active {
+            background-color: #4f46e5 !important;
+            color: white !important;
+            border-color: #4f46e5 !important;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+        }
+
+        .day-tab-active span { color: white !important; opacity: 0.9; }
+
+        .category-tab-active {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .modal-overlay {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+        }
+
+        .ai-search-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            transition: all 0.3s ease;
+        }
+
+        .ai-search-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="pb-32">
+
+    <div id="app" class="max-w-md mx-auto min-h-screen relative bg-white shadow-2xl">
+        <!-- HEADER -->
+        <header id="main-header" class="relative p-6 pt-14 bg-indigo-700 text-white rounded-b-[2.5rem] shadow-xl overflow-hidden transition-all duration-500">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-indigo-500/30 rounded-full blur-3xl"></div>
+
+            <div class="relative z-10">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h1 id="trip-title" class="text-2xl font-extrabold tracking-tight leading-tight">Italy Trip 2026</h1>
+                        <p id="trip-dates" class="text-indigo-100 text-sm font-medium mt-1"></p>
+                    </div>
+                    <div class="bg-white/20 p-2.5 rounded-2xl backdrop-blur-md border border-white/30">
+                        <i data-lucide="plane" id="header-icon" class="w-6 h-6"></i>
+                    </div>
+                </div>
+
+                <!-- Flight Info -->
+                <div id="flight-container" class="mt-6 flex flex-col gap-2">
+                    <!-- Flights Injected -->
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN VIEW (ITINERARY) -->
+        <main id="itinerary-view" class="p-5">
+            <!-- DAY PICKER -->
+            <div class="flex gap-3 overflow-x-auto no-scrollbar py-2" id="day-nav">
+                <!-- Day buttons -->
+            </div>
+
+            <div class="mt-8 flex items-end justify-between px-1">
+                <div>
+                    <h2 id="view-label-en" class="text-xl font-extrabold text-slate-800 tracking-tight leading-none text-indigo-600">Full Itinerary</h2>
+                    <h3 id="view-label-zh" class="text-sm font-bold text-slate-400 mt-1">完整行程</h3>
+                </div>
+                <button onclick="renderAll()" class="text-[10px] font-black text-indigo-600 bg-indigo-50 px-4 py-2 rounded-full border border-indigo-100 uppercase">View All</button>
+            </div>
+
+            <div id="itinerary-list" class="mt-8 space-y-10">
+                <!-- Content here -->
+            </div>
+        </main>
+
+        <!-- DISCOVERY VIEW (LIBRARY) -->
+        <main id="discovery-view" class="p-5 hidden">
+            <div class="flex flex-col mb-8">
+                <h2 class="text-2xl font-black text-slate-800">Discover Italy</h2>
+                <span class="text-slate-400 font-bold text-xs uppercase tracking-widest">意大利小百科</span>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex gap-2 overflow-x-auto no-scrollbar mb-8">
+                <button onclick="filterLibrary('all')" id="tab-all" class="category-tab-active px-5 py-2.5 rounded-2xl text-xs font-black shadow-sm border border-slate-100 whitespace-nowrap">All</button>
+                <button onclick="filterLibrary('food')" id="tab-food" class="bg-white text-slate-500 px-5 py-2.5 rounded-2xl text-xs font-black shadow-sm border border-slate-100 whitespace-nowrap">Food 必食</button>
+                <button onclick="filterLibrary('sight')" id="tab-sight" class="bg-white text-slate-500 px-5 py-2.5 rounded-2xl text-xs font-black shadow-sm border border-slate-100 whitespace-nowrap">Sights 景點</button>
+                <button onclick="filterLibrary('art')" id="tab-art" class="bg-white text-slate-500 px-5 py-2.5 rounded-2xl text-xs font-black shadow-sm border border-slate-100 whitespace-nowrap">Art/Arch 藝術建築</button>
+            </div>
+
+            <div id="library-grid" class="grid grid-cols-1 gap-4">
+                <!-- Library items here -->
+            </div>
+        </main>
+
+        <!-- MODAL FOR DETAILS -->
+        <div id="detail-modal" class="fixed inset-0 z-[110] hidden flex items-end justify-center p-0 sm:p-6 modal-overlay">
+            <div class="bg-white w-full max-w-md rounded-t-[3rem] sm:rounded-[3rem] p-8 shadow-2xl animate-in slide-in-from-bottom duration-300 max-h-[90vh] overflow-y-auto no-scrollbar">
+                <div class="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mb-8"></div>
+                <div id="modal-content">
+                    <!-- Content injected -->
+                </div>
+                <button onclick="closeModal()" class="w-full mt-8 py-4.5 bg-slate-900 text-white rounded-2xl font-bold shadow-xl active:scale-95 transition-transform">CLOSE / 關閉</button>
+            </div>
+        </div>
+
+        <!-- STICKY NAV -->
+        <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto glass-nav px-8 py-5 flex justify-around items-center z-50 rounded-t-[2.5rem]">
+            <button onclick="switchView('itinerary')" class="flex flex-col items-center gap-1.5 text-indigo-600" id="nav-plan">
+                <i data-lucide="calendar" class="w-6 h-6"></i>
+                <span class="text-[10px] font-extrabold uppercase tracking-tighter">Plan</span>
+            </button>
+            <button onclick="switchView('discovery')" class="flex flex-col items-center gap-1.5 text-slate-400" id="nav-discover">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+                <span class="text-[10px] font-extrabold uppercase tracking-tighter">Discover</span>
+            </button>
+            <button onclick="showBooking()" class="flex flex-col items-center gap-1.5 text-slate-400">
+                <i data-lucide="ticket" class="w-6 h-6"></i>
+                <span class="text-[10px] font-extrabold uppercase tracking-tighter">Booking</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+{
+    "info": {
+        "title": "Italy Escape 2026",
+        "titleZh": "意大利之旅 2026",
+        "dates": "Jun 30 — Jul 9, 2026",
+        "flights": [
+            { "id": "BA550", "route": "LHR ➔ FCO", "time": "16:20 - 20:05", "ref": "ZZNC65" },
+            { "id": "BA609", "route": "VCE ➔ LHR", "time": "20:00 - 21:30", "ref": "ZZNC65" }
+        ]
+    },
+    "library": {
+        "carbonara": {
+            "id": "carbonara", "category": "food", "titleEn": "Pasta Carbonara", "titleZh": "羅馬正宗卡邦尼",
+            "desc": "喺羅馬，Carbonara 係唔會落忌廉嘅！淨係用意大利蛋黃、Pecorino Romano 羊奶芝士同埋風乾豬面肉 (Guanciale) 做。個汁要夠濃稠先係正宗。",
+            "slang": "正到爆，嗰種蛋香同豬肉油香真係返唔到轉頭。"
+        },
+        "colosseo": {
+            "id": "colosseo", "category": "sight", "titleEn": "The Colosseum", "titleZh": "羅馬鬥獸場",
+            "desc": "公元 72 年起好，係古羅馬最大嘅圓形劇場。以前係睇劍鬥士搏命嘅地方，最多可以坐 5 萬人。",
+            "slang": "喺出面行吓影相已經好震撼，直情覺得自己穿越返去古羅馬。"
+        },
+        "pantheon": {
+            "id": "pantheon", "category": "art", "titleEn": "The Pantheon", "titleZh": "萬神殿",
+            "desc": "保存得最好嘅古羅馬建築，個圓頂中間有個窿 (Oculus)，落雨嗰陣啲水會喺地面排水口流走。建築學上嘅奇蹟。",
+            "slang": "入面個氣場好勁，望住嗰個圓頂真係覺得自己好渺小。"
+        },
+        "bistecca": {
+            "id": "bistecca", "category": "food", "titleEn": "Bistecca Fiorentina", "titleZh": "翡冷翠大牛扒",
+            "desc": "佛羅倫斯特色 T-Bone 牛扒，一定要燒到外面焦香，入面 Medium Rare。通常按重量計，最少 1kg 起跳。",
+            "slang": "啖啖肉，牛味極濃，係食貨去佛羅倫斯嘅終極目標！"
+        },
+        "duomo": {
+            "id": "duomo", "category": "art", "titleEn": "Florence Cathedral", "titleZh": "聖母百花大教堂",
+            "desc": "文藝復興時期嘅代表作，外牆用咗紅、白、綠三色大理石。布魯內萊斯基設計嘅大圓頂完全冇用支架托住。",
+            "slang": "喺街角轉個彎見到佢嗰吓，真係會驚嘆到『嘩』一聲。"
+        },
+        "cicchetti": {
+            "id": "cicchetti", "category": "food", "titleEn": "Venetian Cicchetti", "titleZh": "威尼斯小食",
+            "desc": "威尼斯版嘅 Tapas。當地人收工會去 Bacaro (小酒吧) 叫杯酒加幾塊 Cicchetti，例如炸魚、炸丸或者多士配鱈魚醬。",
+            "slang": "企喺水邊飲杯酒食吓嘢，呢啲先至係威尼斯嘅生活態度。"
+        },
+        "gondola": {
+            "id": "gondola", "category": "sight", "titleEn": "Gondola", "titleZh": "貢多拉",
+            "desc": "威尼斯傳統手工造嘅黑色長形船。雖然貴，但穿梭喺啲窄窄嘅水道入面，角度完全唔同。",
+            "slang": "一生人點都要坐一次，雖然幾舊水港幣，但嗰種浪漫係無價嘅。"
+        }
+    },
+    "days": [
+        {
+            "dayNum": 1, "date": "Jun 30", "cityEn": "Rome", "cityZh": "羅馬",
+            "summary": "落機之後即刻去食返餐好嘅！",
+            "items": [
+                { "time": "16:20", "icon": "plane", "titleEn": "Departure (BA550)", "titleZh": "倫敦出發", "desc": "喺 Heathrow T5 飛，記得提早到，Ref 係 ZZNC65。" },
+                { "time": "22:00", "icon": "utensils", "titleEn": "Late Dinner", "titleZh": "羅馬宵夜", "desc": "喺 Termini 附近搵間 Pizzeria，試吓第一份意大利薄餅。" }
+            ]
+        },
+        {
+            "dayNum": 2, "date": "Jul 1", "cityEn": "Rome", "cityZh": "羅馬",
+            "summary": "今日行吓古城，唔使入美術館都夠晒震撼。",
+            "items": [
+                { "time": "09:00", "icon": "camera", "titleEn": "Colosseum Exterior", "titleZh": "鬥獸場外圍", "libraryId": "colosseo", "desc": "喺外面影相已經好正，唔使排隊入去，周圍行吓感受古羅馬氣氛。", "map": "https://www.google.com/maps/search/Colosseum" },
+                { "time": "14:00", "icon": "sun", "titleEn": "Pantheon & Piazza", "titleZh": "萬神殿與廣場", "libraryId": "pantheon", "desc": "去睇吓個無敵大圓頂，順便喺廣場食支 Gelato 涼爽吓。" },
+                { "time": "20:00", "icon": "utensils", "titleEn": "Dinner (Carbonara)", "titleZh": "正宗卡邦尼晚餐", "libraryId": "carbonara", "desc": "搵間老字號試吓無忌廉版嘅 Carbonara。" }
+            ]
+        },
+        {
+            "dayNum": 3, "date": "Jul 2", "cityEn": "Vatican City", "cityZh": "梵蒂岡",
+            "summary": "跨國之旅！由羅馬行去另一個國家。",
+            "items": [
+                { "time": "10:00", "icon": "landmark", "titleEn": "St. Peter's Basilica", "titleZh": "聖彼得大教堂", "desc": "入教堂係免費嘅，但記得要遮住膊頭同膝頭，唔係唔俾入。" },
+                { "time": "16:00", "icon": "map", "titleEn": "Trastevere Walk", "titleZh": "台伯河畔文青區", "desc": "羅馬最地道嘅區，啲細巷影相超靚，晚餐喺呢度食平靚正。" }
+            ]
+        },
+        {
+            "dayNum": 4, "date": "Jul 3", "cityEn": "Florence", "cityZh": "佛羅倫斯",
+            "summary": "搭火車去文藝復興嘅發源地。",
+            "items": [
+                { "time": "15:00", "icon": "image", "titleEn": "Duomo Square", "titleZh": "聖母百花大教堂", "libraryId": "duomo", "desc": "喺外面睇佢啲紅白綠大理石已經夠晒眼花繚亂。" },
+                { "time": "19:30", "icon": "eye", "titleEn": "Sunset View", "titleZh": "米開朗基羅廣場日落", "desc": "一定要行上去！全個 Florence 景觀一覽無遺，係全個 trip 最靚嘅日落。", "map": "https://www.google.com/maps/search/Piazzale+Michelangelo" }
+            ]
+        },
+        {
+            "dayNum": 5, "date": "Jul 4", "cityEn": "Florence", "cityZh": "佛羅倫斯",
+            "summary": "今日係買皮具同食牛扒嘅日子。",
+            "items": [
+                { "time": "13:00", "icon": "utensils", "titleEn": "Central Market", "titleZh": "中央市場食牛肚包", "desc": "去二樓 Food Court 搵食，一定要試正宗 Lampredotto (牛肚包)。" },
+                { "time": "20:00", "icon": "flame", "titleEn": "T-Bone Steak Dinner", "titleZh": "翡冷翠大牛扒", "libraryId": "bistecca", "desc": "嚟到呢度唔食返客 Bistecca 點對得住自己？" }
+            ]
+        },
+        {
+            "dayNum": 6, "date": "Jul 5", "cityEn": "Pisa & Lucca", "cityZh": "比薩與盧卡",
+            "summary": "去斜塔打卡，再去古城踩單車。",
+            "items": [
+                { "time": "10:00", "icon": "arrow-up-right", "titleEn": "Leaning Tower", "titleZh": "比薩斜塔", "desc": "影返張經典嘅『推塔』相，影完就可以閃人。" },
+                { "time": "14:00", "icon": "bike", "titleEn": "Lucca City Walls", "titleZh": "盧卡古城牆踩單車", "desc": "喺完整嘅古城牆上面踩單車，好舒服，完全冇壓力。", "map": "https://www.google.com/maps/search/Lucca+City+Walls" }
+            ]
+        },
+        {
+            "dayNum": 7, "date": "Jul 6", "cityEn": "Venice", "cityZh": "威尼斯",
+            "summary": "終於去到水都，住喺本島外圍方便搬行李。",
+            "items": [
+                { "time": "14:30", "icon": "hotel", "titleEn": "Check-in Hampton", "titleZh": "入住酒店", "desc": "喺 Tronchetto 區，搭 People Mover 輕軌好快就到酒店。", "map": "https://www.google.com/maps/search/Hampton+Venice+Isola+Nuova" },
+                { "time": "17:00", "icon": "ship", "titleEn": "Grand Canal Cruise", "titleZh": "大運河水上巴士", "desc": "嘟張 Pass 搭 2 號船巡禮，坐喺船頭睇兩岸建築。" }
+            ]
+        },
+        {
+            "dayNum": 8, "date": "Jul 7", "cityEn": "Venice", "cityZh": "威尼斯",
+            "summary": "喺威尼斯盪失路，去市集睇吓當地生活。",
+            "items": [
+                { "time": "09:00", "icon": "anchor", "titleEn": "Rialto Market", "titleZh": "里阿爾托市場", "desc": "朝早睇吓當地人賣海鮮同蔬果，好有生活氣息。" },
+                { "time": "18:00", "icon": "wine", "titleEn": "Cicchetti Night", "titleZh": "威尼斯小食站著食", "libraryId": "cicchetti", "desc": "去啲小 Bar 叫杯 Spritz 再加幾塊小食，體驗水都文化。" }
+            ]
+        },
+        {
+            "dayNum": 9, "date": "Jul 8", "cityEn": "Venice", "cityZh": "威尼斯",
+            "summary": "最後衝刺！去睇全景同吹海風。",
+            "items": [
+                { "time": "11:00", "icon": "eye", "titleEn": "Bell Tower View", "titleZh": "聖喬治島鐘樓", "desc": "唔使去聖馬可排隊，呢度睇全景仲靚，而且有電梯搭。" },
+                { "time": "16:00", "icon": "ship", "titleEn": "Gondola Ride", "titleZh": "坐貢多拉", "libraryId": "gondola", "desc": "穿梭威尼斯窄水道，睇吓唔同嘅水都視角。" }
+            ]
+        },
+        {
+            "dayNum": 10, "date": "Jul 9", "cityEn": "Home", "cityZh": "回程倫敦",
+            "summary": "買埋手信，準備返 London。",
+            "items": [
+                { "time": "20:00", "icon": "plane-takeoff", "titleEn": "Flight BA609", "titleZh": "搭機返倫敦", "desc": "喺威尼斯馬可波羅機場飛，結束 10 日完美旅程。" }
+            ]
+        }
+    ]
+}
