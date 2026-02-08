@@ -2,6 +2,7 @@
     "info": {
         "title": "Italy Escape 2026",
         "titleZh": "意大利之旅 2026",
+        "bookingRef": "ZZNC65",
         "dates": "Jun 30 — Jul 9, 2026",
         "flights": [
             { "id": "BA550", "route": "LHR ➔ FCO", "time": "16:20 - 20:05", "ref": "ZZNC65" },

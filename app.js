@@ -251,7 +251,7 @@ function showBooking() {
         <div class="bg-white rounded-[2.5rem] w-full max-w-xs p-10 shadow-2xl animate-in zoom-in-95 duration-300">
             <h3 class="text-xl font-black text-slate-800 mb-1 text-center">Booking Ref.</h3>
             <div class="bg-indigo-50 p-8 rounded-[2rem] text-center my-8 border border-indigo-100">
-                <span class="text-4xl font-black text-indigo-600 tracking-[0.2em] uppercase">ZZNC65</span>
+                <span class="text-4xl font-black text-indigo-600 tracking-[0.2em] uppercase">${tripData.info.bookingRef || (tripData.info.flights && tripData.info.flights[0] ? tripData.info.flights[0].ref : 'N/A')}</span>
             </div>
             <button onclick="this.parentElement.parentElement.remove()" class="w-full py-4.5 bg-slate-900 text-white rounded-2xl font-bold">CLOSE / 關閉</button>
         </div>
